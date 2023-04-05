@@ -18,7 +18,7 @@ with left_column:
 
 with right_column:
     # Ram size
-    ram = st.selectbox("Ram (in GB)", df["Ram_size"].unique())
+    ram = st.selectbox("Ram (in GB)", df["Ram_Size"].unique())
 
 # making 2 cols left_column, right_column
 left_column, right_column = st.columns(2)
