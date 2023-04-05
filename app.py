@@ -49,7 +49,7 @@ with right_column:
 os=st.selectbox("OS Type",df["OS"].unique())
 
 #RAM_type input
-Ram_type=st.selectbox("RAM Type",df["Ram_type"].unique())
+Ram_type=st.selectbox("RAM Type",df["Ram_Type"].unique())
 
 if st.button("Predict Price"):
     query=np.array([company, type, ram, cpu, hdd, ssd, EMMC, os, Ram_type])
