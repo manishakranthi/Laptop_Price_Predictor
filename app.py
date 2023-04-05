@@ -54,5 +54,5 @@ Ram_type=st.selectbox("RAM Type",df["Ram_Type"].unique())
 if st.button("Predict Price"):
     query=np.array([company, type, ram, cpu, hdd, ssd, EMMC, os, Ram_type])
 
-    query=query.reshape(1, 9)
+    query=query.reshape(1, -1)
     st.title("The Predicted Price of Laptop = Rs "+str(int(np.exp(pipe.predict(query)[0]))))
