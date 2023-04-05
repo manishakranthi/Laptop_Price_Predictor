@@ -48,8 +48,11 @@ with right_column:
 #os input
 os=st.selectbox("OS Type",df["OS"].unique())
 
-if st.button("Predict Price"):
-    query=np.array([company, type, ram, cpu, hdd, ssd, EMMC, os])
+#RAM_type input
+Ram_type=st.selectbox("RAM Type",df["Ram_type"].unique())
 
-    query=query.reshape(1, 8)
+if st.button("Predict Price"):
+    query=np.array([company, type, ram, cpu, hdd, ssd, EMMC, os, Ram_type])
+
+    query=query.reshape(1, 9)
     st.title("The Predicted Price of Laptop = Rs "+str(int(np.exp(pipe.predict(query)[0]))))
